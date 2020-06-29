@@ -152,17 +152,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION':"redis://:12345@127.0.0.1:6379/1",
-        'OPTIONS':{
-            "CLIENT_CLASS":"django_redis.client.DefaultClient",
-        }
-
-    }
-}
-#配置session储存
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-SESSION_CACHE_ALIAS = "default"
 

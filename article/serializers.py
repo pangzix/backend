@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from article.models import ArticlePost,Category
 from django.contrib.auth.models import User
-import redis
-from django_redis import get_redis_connection
 
 
 
