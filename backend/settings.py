@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'article.apps.ArticleConfig',
     'userprofile',
+    'todolist',
 
 ]
 
@@ -64,7 +65,9 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
  'http://192.168.1.20:8080',
  'http://127.0.0.1',
- 'http://192.168.1.20',#Frontend on dev mode
+ 'http://192.168.1.20',
+ 'http://127.0.0.1:81', 'http://127.0.0.1:8080',
+
 )
 
 
@@ -73,7 +76,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',
                                        'rest_framework.authentication.SessionAuthentication',
                                        ),
-    'DATETIME_FORMAT': "%Y-%m-%d ",
+    'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     # 'PAGE_SIZE': 5,

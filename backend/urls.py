@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
 from article.views import ArticlePostViewSet,TopArticlePostViewSet,CategoryViewSet,CategorylistViewSet
+from todolist.views import TodolistViewSet
 
 router = routers.DefaultRouter()
 router.register(r'articles',ArticlePostViewSet,basename='article')
 router.register(r'top',TopArticlePostViewSet,basename='top')
 router.register(r'categories',CategoryViewSet,basename='category')
 router.register(r'categorylist',CategorylistViewSet,basename='categorylist')
+router.register(r'todolist',TodolistViewSet,basename='todolist')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('article/',include('article.urls')),
